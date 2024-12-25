@@ -87,11 +87,17 @@ void selectOption(CredentialDB& credDB)
   std::cout<<"--Available Options--"<<std::endl;
   std::cout<<"1. Get Credential"<<std::endl;
   std::cout<<"2. Add Credential"<<std::endl;
-  std::cout<<"3. Update Credential"<<std::endl;
-  std::cout<<"4. Delete Credential"<<std::endl;
+  std::cout<<"3. Update Credential(TBA)"<<std::endl;
+  std::cout<<"4. Delete Credential(TBA)"<<std::endl;
   std::cout<<"5. Exit"<<std::endl;
   std::cout<<std::endl<<"Enter the option index: ";
-  std::cin>>optionIndex;
+  if(!(std::cin>>optionIndex))
+  {
+    std::cout<<"Invalid Option"<<std::endl;
+    std::cin.clear();
+    std::cin.ignore(10000, '\n');
+    return;
+  }
 
   switch(optionIndex)
   {
